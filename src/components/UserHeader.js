@@ -8,18 +8,17 @@ class UserHeader extends Component {
   }
 
   render() {
-    const user = this.props.users.find(user => user.id === this.props.userId);
-
+    const { author } = this.props;
     return (
       <div>
-        <p>{user ? user.name : null}</p>
+        <p>{author ? author.name : null}</p>
       </div>
     );
   }
 }
 
-const mapStateToProps = state => {
-  return { users: state.users };
+const mapStateToProps = (state, ownProps) => {
+  return { author: state.authors.find(author => author.id === ownProps.userId) };
 };
 
 export default connect(
