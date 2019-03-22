@@ -1,29 +1,15 @@
 import React from 'react';
 import { BrowserRouter, Route, Link } from 'react-router-dom';
 
-const PageOne = () => {
-  return (
-    <div>
-      PageOne
-      <Link to="/pagetwo">Page Two</Link>
-    </div>
-  );
-};
-const PageTwo = () => {
-  return (
-    <div>
-      PageTwo
-      <Link to="/">Page One</Link>
-    </div>
-  );
-};
+import VideoCreate from './video/VideoCreate';
+import VideoList from './video/VideoList';
 
 const App = () => {
   return (
     <div>
       <BrowserRouter>
-        <Route path="/" exact component={PageOne} />
-        <Route path="/pagetwo" component={PageTwo} />
+        <Route path="/" exact component={VideoList} />
+        <Route path="/pagetwo" component={VideoCreate} />
       </BrowserRouter>
     </div>
   );
