@@ -13,14 +13,14 @@ class GoogleAuth extends Component {
         .then(() => {
           this.auth = window.gapi.auth2.getAuthInstance();
           this.onAuthChange(this.auth.isSignedIn.get());
-          this.auth.isSignedIn.listen(() => this.onAuthChange());
+          this.auth.isSignedIn.listen(this.onAuthChange);
         });
     });
   }
 
   onAuthChange = isSignedIn => {
     if (isSignedIn) {
-      this.props.signIn();
+      this.props.signIn(this.auth.currentUser.get().getId());
     } else {
       this.props.signOut();
     }
