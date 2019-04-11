@@ -1,7 +1,10 @@
 import React from 'react';
+import { Field, reduxForm } from 'redux-form';
 
-const VideoCreate = () => {
-  return <div>VideoCreate</div>;
-};
+class VideoCreate extends React.Component {
+  render() {
+    return <div>VideoCreate</div>;
+  }
+}
 
 export default VideoCreate;
