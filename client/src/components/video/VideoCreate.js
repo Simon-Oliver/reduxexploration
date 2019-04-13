@@ -26,4 +26,16 @@ class VideoCreate extends React.Component {
   }
 }
 
+const validate = formValues => {
+  const errors = {};
+  if (!formValues.tile) {
+    errors.title = 'You must enter a title';
+  }
+
+  if (!formValues.description) {
+    error.description = 'You must enter a title';
+  }
+  return {};
+};
+
 export default reduxForm({ form: 'streamCreate' })(VideoCreate);
