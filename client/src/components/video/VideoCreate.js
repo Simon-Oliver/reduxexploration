@@ -33,7 +33,7 @@ const validate = formValues => {
   }
 
   if (!formValues.description) {
-    error.description = 'You must enter a title';
+    error.description = 'You must enter a description';
   }
   return {};
 };
